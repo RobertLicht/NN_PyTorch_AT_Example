@@ -393,7 +393,7 @@ ECHO [i] Using default virtual environment: %VENV_NAME%
 ECHO [i] Using entered virtual environment: %VENV_NAME%
 :LAUNCHPYTHONSCRIPT
 REM .... Launch python-script ....
-START POWERSHELL -executionpolicy bypass -noexit -command "[console]::Title='NeuronalNetwork_PyTorch_AT_Example'; [console]::WindowWidth=140; [console]::WindowHeight=40; [console]::BufferWidth=[console]::WindowWidth"; CD %PUBLIC%/NN_PyTorch_AT_Example; ./venv_nn_pytorch/Scripts/activate.ps1; Write-Host "`r`n[i] INITIALIZING - This may take some time..."; nn_pytorch_at_example.py
+START POWERSHELL -executionpolicy bypass -noexit -command "[console]::Title='NeuronalNetwork_PyTorch_AT_Example'; [console]::WindowWidth=140; [console]::WindowHeight=40; [console]::BufferWidth=[console]::WindowWidth"; CD %PUBLIC%/NN_PyTorch_AT_Example; ./venv_nn_pytorch/Scripts/activate.ps1; Write-Host "`r`n[i] INITIALIZING - This may take some time..."; python.exe nn_pytorch_at_example.py
 GOTO SETUPFINISHED
 :ABORTSETUP
 COLOR 0C

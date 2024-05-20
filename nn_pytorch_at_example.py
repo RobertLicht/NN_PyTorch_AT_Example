@@ -334,8 +334,10 @@ def func_execute_all():
     batch_size = 16
     threshold_loss = 0.333
     loss = threshold_loss + 1
-    str_msg = "The Gradient descent will be run to update the network parameters for a maximum "\
-        f"of {n_epochs} epochs, or less if the loss is smaller or equal to {threshold_loss}."
+    str_msg = f"""
+        The Gradient descent will be run to update the network parameters for a maximum
+        of {n_epochs} epochs, or less if the loss is smaller or equal to {threshold_loss}.
+    """
     logger.info(str_msg)
     print(str_msg)
     str_msg = None
@@ -374,7 +376,7 @@ def func_execute_all():
     with torch.no_grad():
         y_pred = cls_model(X)
     accuracy = (y_pred.round() == y).float().mean()
-    str_msg = f"\nAccuracy of the model using the training dataset: {(accuracy * 100):.1f}%"
+    str_msg = f"\nAccuracy of the model, using the training dataset for evaluation: {(accuracy * 100):.1f}%"
     logger.info(str_msg)
     print(str_msg)
     str_msg = None
@@ -398,7 +400,7 @@ def func_execute_all():
     logger.debug(str_msg)
     str_msg = None
     # ... Showing values for the first five examples ...
-    for i in range(5):
+    for i in range(10):
         str_msg = f"\nExample {i}\nPredictions\n{X[i].tolist()} => {(predictions[i].item() * 100):.1f}% | expected: {int(y[i].item()) * 100}%"\
             f"\nPredictions rounded\n{X[i].tolist()} => {pred_rnded[i].item()} | expected: {y[i].item()}"\
             f"\nClass predictions\n{X[i].tolist()} => {pred_cls[i].item()} | expected: {int(y[i].item())}\n"
