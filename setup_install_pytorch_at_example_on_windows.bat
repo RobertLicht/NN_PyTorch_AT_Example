@@ -2,7 +2,7 @@
 REM author: Robert-Vincent Lichterfeld <robert.vincent.n@gmail.com>
 REM copyright: Robert-Vincent Lichterfeld
 REM Set title of window
-title Setup and install PyTorch JB Example on Windows
+title Setup and install PyTorch AT Example on Windows
 REM Rezize command prompt
 mode con: cols=160 lines=40
 COLOR 0A
