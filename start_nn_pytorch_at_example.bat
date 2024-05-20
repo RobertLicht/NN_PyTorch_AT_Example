@@ -1,5 +1,5 @@
 @ECHO OFF
-REM author: Robert-Vincent Lichterfeld <robert.vincent.n@gmail.com>
+REM author: Robert-Vincent Lichterfeld <e-mail.com>
 REM copyright: Robert-Vincent Lichterfeld
 REM Set title of window
 title Start PyTorch AT Example on Windows
@@ -176,6 +176,8 @@ ECHO ------------------------------------------------- >>"%HOMEPATH%\Desktop\%CO
 FOR /F "delims=" %%c IN ('git config --list --global') DO ECHO %%c >>"%HOMEPATH%\Desktop\%COMPUTERNAME%_%USERNAME%_EDITED_GIT_CONFIG.txt"
 ECHO. >>"%HOMEPATH%\Desktop\%COMPUTERNAME%_%USERNAME%_CURRENT_GIT_CONFIG.txt"
 :AFTERSTORINGOFGITCFG
+REM .... Clone repository from source to destination ....
+git clone https://github.com/RobertLicht/NN_PyTorch_AT_Example.git %PYTORCH_AT_Example%
 REM .... Update pip ....
 ECHO [i] Ensure that pip is installed (package installer for python)
 ECHO [debug] Changing directory
@@ -248,7 +250,7 @@ REM #%CW_DIR%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%:%ENCODED_PW%@%PROXY_ADDRESS% install --upgrade pip setuptools wheel
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%:%ENCODED_PW%@%PROXY_ADDRESS% install -r %PYTORCH_AT_Example%\%REQUIREMENTS_FILE%
 REM .... Check and select a suitable version of PyTorch ....
-SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio
 ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please make sure a suitable version of PyTorch (if necesary with pre compiled CUDA support) will be used!
 ECHO [i]    Default command (python_from_virtual_env -m pip install): %DEFAULT_INSTALL_PYTORCH%
@@ -276,6 +278,8 @@ REM #%CW_DIR%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%
 ECHO -------------------------
 GOTO LAUNCHPYTHONSCRIPT
 :NOPROXY
+REM .... Clone repository from source to destination ....
+git clone https://github.com/RobertLicht/NN_PyTorch_AT_Example.git %PYTORCH_AT_Example%
 REM .... Update pip ....
 ECHO [i] Ensure that pip is installed (package installer for python)
 ECHO [debug] Changing directory
@@ -348,7 +352,7 @@ REM #%CW_DIR%\\%VENV_NAME%\\Scripts\\python.exe -m pip install -r %REQUIREMENTS_
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip install --upgrade pip setuptools wheel
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip install -r %PYTORCH_AT_Example%\%REQUIREMENTS_FILE%
 REM .... Check and select a suitable version of PyTorch ....
-SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio
 ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please make sure a suitable version of PyTorch (if necesary with pre compiled CUDA support) will be used!
 ECHO [i]    Default command (python_from_virtual_env -m pip install): %DEFAULT_INSTALL_PYTORCH%

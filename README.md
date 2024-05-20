@@ -1,5 +1,5 @@
 # Demo of a first deep learning neuronal network model in Python
-This demonstration is based on the great [tutorial](https://machinelearningmastery.com/develop-your-first-neural-network-with-pytorch-step-by-step/) from Adrian Tam PhD, in which he explains Step by Step how to develop an (Artificial) Neural Network with PyTorch.
+This demonstration is based on the great [tutorial](https://machinelearningmastery.com/develop-your-first-neural-network-with-pytorch-step-by-step/) from Adrian Tam PhD, in which he explains Step by Step how to develop an (Artificial) Neural Network with PyTorch. 🤖🧠🇦🇮👾
 
 ## Quick links
 * [Overview](#overview)
@@ -55,13 +55,25 @@ As an alternative to Git, the data of the repository can be downloaded as an arc
     * https://github.com/RobertLicht/NN_PyTorch_AT_Example/archive/refs/heads/main.zip
 * Extract the downloaded archive into the recommended default location:
     * Windows
-        > %PUBLIC%\NN_PyTorch_AT_Example
+        > %PUBLIC%\NN_PyTorch_AT_Example\
     * Linux
-        > /c/Users/Public/NN_PyTorch_AT_Example
+        > /c/Users/Public/NN_PyTorch_AT_Example/
+
+#### Use only the setup file
+It is possible to use only the batch file _setup_install_pytorch_at_example_on_windows.bat_ to get all files from the repository and install the necessary packages.
+* Navigate to the file inside the Repository _NN_PyTorch_AT_Example_
+    * Use the URL to [get to the file _setup_install_pytorch_at_example_on_windows.bat_](https://github.com/RobertLicht/NN_PyTorch_AT_Example/blob/fe2f547359f89ed732237bc6c76fc7a2469fc703/setup_install_pytorch_at_example_on_windows.bat)
+        *  https://github.com/RobertLicht/NN_PyTorch_AT_Example/blob/fe2f547359f89ed732237bc6c76fc7a2469fc703/setup_install_pytorch_at_example_on_windows.bat
+* Use the button with three dots ・・・ (_more file actions_) or use the keyboard shortcut **_ctrl_** + **_shift_** + **_s_** to download the raw content
+* Save or move the downloaded batch file to the recommended default location:
+    * Windows
+        > %PUBLIC%\NN_PyTorch_AT_Example\
+    * Linux
+        > /c/Users/Public/NN_PyTorch_AT_Example/
 
 ### Launch the setup process
 After the initial data is gathered and stored at the local machine the process to set up everything else can be launched.
-* Navigate to the file _**setup_install_pytorch_at_example_on_windows.bat**_ and execute the batch script with a double-click
+* Navigate to the file **_setup_install_pytorch_at_example_on_windows.bat_** and execute the batch script with a double-click
     * The batch script will handle all requirements that are necessary to set up the demo
     * During the setup, the user will be prompted to decide how to proceed
         * In most cases pressing **ENTER** or entering **n** will be suitable to follow the default configuration
@@ -71,7 +83,7 @@ After the setup has been completed successfully, the Demonstrator is ready for u
 
 ### Start the Demo
 The startup is handled by the batch file _start_nn_pytorch_at_example.bat_, which should be available at the recommended default location.
-* Navigate to the file _**start_nn_pytorch_at_example.bat**_ and execute the batch script with a double-click
+* Navigate to the file **_start_nn_pytorch_at_example.bat_** and execute the batch script with a double-click
 * During the startup, an additional Command Line Shell running [_nvitop_](https://github.com/XuehaiPan/nvitop/tree/main) will be launched
     * The tool _nvitop_ provides some insights, considering the usage of system resources
 * After initializing of libraries and _nvitop_ a Windows PowerShell instance will be launched

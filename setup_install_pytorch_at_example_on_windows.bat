@@ -1,5 +1,5 @@
 @ECHO OFF
-REM author: Robert-Vincent Lichterfeld <robert.vincent.n@gmail.com>
+REM author: Robert-Vincent Lichterfeld <e-mail.com>
 REM copyright: Robert-Vincent Lichterfeld
 REM Set title of window
 title Setup and install PyTorch AT Example on Windows
@@ -173,7 +173,9 @@ ECHO ------------------------------------------------- >>"%HOMEPATH%\Desktop\%CO
 FOR /F "delims=" %%c IN ('git config --list --global') DO ECHO %%c >>"%HOMEPATH%\Desktop\%COMPUTERNAME%_%USERNAME%_EDITED_GIT_CONFIG.txt"
 ECHO. >>"%HOMEPATH%\Desktop\%COMPUTERNAME%_%USERNAME%_CURRENT_GIT_CONFIG.txt"
 :AFTERSTORINGOFGITCFG
-REM ---- Update pip ----
+REM .... Clone repository from source to destination ....
+git clone https://github.com/RobertLicht/NN_PyTorch_AT_Example.git %PYTORCH_AT_Example%
+REM .... Update pip ....
 ECHO [i] Ensure that pip is installed (package installer for python)
 ECHO [debug] Changing directory
 CD %PYTHON_INSTALL_PATH%
@@ -186,15 +188,13 @@ ECHO [i] Installing package virtualenv with flag --user
 python -m pip --proxy http://%USERNAME%:%ENCODED_PW%@%PROXY_ADDRESS% install --user virtualenv
 ECHO [i] Upgrading setuptools
 python -m pip --proxy http://%USERNAME%:%ENCODED_PW%@%PROXY_ADDRESS% install --upgrade pip setuptools
-REM ---- Show some information prior to creation of virtual environment ----
+REM .... Show some information prior to creation of virtual environment ....
 IF NOT EXIST "%PYTORCH_AT_Example%" MKDIR "%PYTORCH_AT_Example%"
 ECHO [i] Changing directory to where the virtual environment will be created and showing content of directory...
-REM #CD %CW_DIR% && DIR && ECHO.
-REM #START explorer.exe "%CW_DIR%"
 CD %PYTORCH_AT_Example% && DIR && ECHO.
 START explorer.exe "%PYTORCH_AT_Example%"
-REM ---- Setup and configure virtual environment ----
-ECHO -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+REM .... Setup and configure virtual environment ....
+ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please enter infromation about the new virtual environment, which will be used by python
 ECHO [i]    Default name of the virtual environment: %DEFAULT_VENV_NAME%
 SET /P VENV_NAME=Please enter name of virtual environment (Hit RETURN to use the default): 
@@ -222,7 +222,7 @@ ECHO. && ECHO [i] Activating virtual environment "%VENV_NAME%" and check with WH
 START CMD /C CD %PYTORCH_AT_Example% ^& %VENV_NAME%\Scripts\activate ^& title=Check_python_env ^& ECHO [i] Checking for available python environments... ^& WHERE PYTHON ^& deactivate ^& TIMEOUT /T 10
 REM ....Check and select a suitable file which contains the required python packages ....
 REM # Source - Shell script operators: https://stackoverflow.com/a/47385593
-ECHO -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please make sure a suitable file which contains the required python packages will be used!
 ECHO [i]    Default requirements file: %DEFAULT_REQUIREMENTS_FILE%
 SET /P REQUIREMENTS_FILE=Please enter name and file extension of file containing the required python packages (Hit RETURN to use the default): 
@@ -247,8 +247,8 @@ REM #%CW_DIR%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%:%ENCODED_PW%@%PROXY_ADDRESS% install --upgrade pip setuptools wheel
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip --proxy http://%USERNAME%:%ENCODED_PW%@%PROXY_ADDRESS% install -r %PYTORCH_AT_Example%\%REQUIREMENTS_FILE%
 REM .... Check and select a suitable version of PyTorch ....
-SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-ECHO -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio
+ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please make sure a suitable version of PyTorch (if necesary with pre compiled CUDA support) will be used!
 ECHO [i]    Default command (python_from_virtual_env -m pip install): %DEFAULT_INSTALL_PYTORCH%
 ECHO [i]        Get a command for a localy suitable version by visiting the following website
@@ -278,6 +278,8 @@ SET /P INPUT_REMOVE_GIT_CFG=Enter y or n:
 IF /I "%INPUT_REMOVE_GIT_CFG%" =="y" GOTO RESETGITCONFIGANDPW
 GOTO SETUPFINISHED
 :NOPROXY
+REM .... Clone repository from source to destination ....
+git clone https://github.com/RobertLicht/NN_PyTorch_AT_Example.git %PYTORCH_AT_Example%
 REM ---- Update pip ----
 ECHO [i] Ensure that pip is installed (package installer for python)
 ECHO [debug] Changing directory
@@ -294,12 +296,10 @@ python -m pip install --upgrade pip setuptools
 REM ---- Show some information prior to creation of virtual environment ----
 IF NOT EXIST "%PYTORCH_AT_Example%" MKDIR "%PYTORCH_AT_Example%"
 ECHO [i] Changing directory to where the virtual environment will be created and showing content of directory...
-REM #CD %CW_DIR% && DIR && ECHO.
-REM #START explorer.exe "%CW_DIR%"
 CD %PYTORCH_AT_Example% && DIR && ECHO.
 START explorer.exe "%PYTORCH_AT_Example%"
 REM ---- Setup and configure virtual environment ----
-ECHO -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please enter infromation about the new virtual environment, which will be used by python
 ECHO [i]    Default name of the virtual environment: %DEFAULT_VENV_NAME%
 SET /P VENV_NAME=Please enter name of virtual environment (Hit RETURN to use the default): 
@@ -327,7 +327,7 @@ ECHO. && ECHO [i] Activating virtual environment "%VENV_NAME%" and check with WH
 START CMD /C CD %PYTORCH_AT_Example% ^& %VENV_NAME%\Scripts\activate ^& title=Check_python_env ^& ECHO [i] Checking for available python environments... ^& WHERE PYTHON ^& deactivate ^& TIMEOUT /T 10
 REM ....Check and select a suitable file which contains the required python packages ....
 REM # Source - Shell script operators: https://stackoverflow.com/a/47385593
-ECHO -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please make sure a suitable file which contains the required python packages will be used!
 ECHO [i]    Default requirements file: %DEFAULT_REQUIREMENTS_FILE%
 SET /P REQUIREMENTS_FILE=Please enter name and file extension of file containing the required python packages (Hit RETURN to use the default): 
@@ -352,8 +352,8 @@ REM #%CW_DIR%\\%VENV_NAME%\\Scripts\\python.exe -m pip install -r %REQUIREMENTS_
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip install --upgrade pip setuptools wheel
 %PYTORCH_AT_Example%\\%VENV_NAME%\\Scripts\\python.exe -m pip install -r %PYTORCH_AT_Example%\%REQUIREMENTS_FILE%
 REM .... Check and select a suitable version of PyTorch ....
-SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-ECHO -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+SET DEFAULT_INSTALL_PYTORCH=torch torchvision torchaudio
+ECHO -----------------------------------------------------------------------------------------------------
 ECHO [i] Please make sure a suitable version of PyTorch (if necesary with pre compiled CUDA support) will be used!
 ECHO [i]    Default command (python_from_virtual_env -m pip install): %DEFAULT_INSTALL_PYTORCH%
 ECHO [i]        Get a command for a localy suitable version by visiting the following website
