@@ -1,5 +1,5 @@
-# Demo of a first deep learning neuronal network model in Python
-This demonstration is based on the great [tutorial](https://machinelearningmastery.com/develop-your-first-neural-network-with-pytorch-step-by-step/) from Adrian Tam PhD, in which he explains Step by Step how to develop an (Artificial) Neural Network with PyTorch. 🤖🧠🇦🇮👾
+# Demo of a first deep learning neural network model in Python
+This demonstration is based on the great [tutorial](https://machinelearningmastery.com/develop-your-first-neural-network-with-pytorch-step-by-step/) by Adrian Tam PhD, in which he explains Step by Step how to develop an (Artificial) Neural Network with PyTorch. 🤖🧠🇦🇮👾
 
 ## Quick links
 * [Overview](#overview)
@@ -87,3 +87,6 @@ The startup is handled by the batch file _start_nn_pytorch_at_example.bat_, whic
 * During the startup, an additional Command Line Shell running [_nvitop_](https://github.com/XuehaiPan/nvitop/tree/main) will be launched
     * The tool _nvitop_ provides some insights, considering the usage of system resources
 * After initializing of libraries and _nvitop_ a Windows PowerShell instance will be launched
+
+### Disclaimer
+Use at your own discretion and risk. You will be solely responsible for any damage to your computer system or loss of data.
