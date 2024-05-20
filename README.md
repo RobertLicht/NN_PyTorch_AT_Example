@@ -35,7 +35,7 @@ The initial setup, the installation of packages is heavily supported by the batc
 To get this batch file and all other necessary data, the repository can be cloned by using Git or downloaded to the local machine of the user.
 
 ### Get the fles and data
-This guide will show two ways, which can be used to retrieve the necessary data from GitHub.
+This guide will show different ways that can be used to retrieve the necessary data from GitHub.
 
 #### Clone the repository
 The utilization of Git is the most comfortable way to transfer the data of the repository to the recommended default location.
