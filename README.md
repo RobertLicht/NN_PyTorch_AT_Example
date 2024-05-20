@@ -62,8 +62,8 @@ As an alternative to Git, the data of the repository can be downloaded as an arc
 #### Use only the setup file
 It is possible to use only the batch file _setup_install_pytorch_at_example_on_windows.bat_ to get all files from the repository and install the necessary packages.
 * Navigate to the file inside the Repository _NN_PyTorch_AT_Example_
-    * Use the URL to [get to the file _setup_install_pytorch_at_example_on_windows.bat_](https://github.com/RobertLicht/NN_PyTorch_AT_Example/blob/fe2f547359f89ed732237bc6c76fc7a2469fc703/setup_install_pytorch_at_example_on_windows.bat)
-        *  https://github.com/RobertLicht/NN_PyTorch_AT_Example/blob/fe2f547359f89ed732237bc6c76fc7a2469fc703/setup_install_pytorch_at_example_on_windows.bat
+    * Use the URL to [get to the file _setup_install_pytorch_at_example_on_windows.bat_](https://github.com/RobertLicht/NN_PyTorch_AT_Example/blob/main/setup_install_pytorch_at_example_on_windows.bat)
+        *  https://github.com/RobertLicht/NN_PyTorch_AT_Example/blob/main/setup_install_pytorch_at_example_on_windows.bat
 * Use the button with three dots ・・・ (_more file actions_) or use the keyboard shortcut **_ctrl_** + **_shift_** + **_s_** to download the raw content
 * Save or move the downloaded batch file to the recommended default location:
     * Windows
