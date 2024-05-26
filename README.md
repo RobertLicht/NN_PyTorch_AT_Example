@@ -34,7 +34,7 @@ The main process consists of the following steps, which are provided by the [tut
 The initial setup, the installation of packages is heavily supported by the batch file _setup_install_pytorch_at_example_on_windows.bat_.
 To get this batch file and all other necessary data, the repository can be cloned by using Git or downloaded to the local machine of the user.
 
-### Get the fles and data
+### Get the files and data
 This guide will show different ways that can be used to retrieve the necessary data from GitHub.
 
 #### Clone the repository

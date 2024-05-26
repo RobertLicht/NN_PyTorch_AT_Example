@@ -348,7 +348,7 @@ def func_execute_all():
             y_pred = cls_model(X_batch)
             y_batch = y[i:i+batch_size]
             loss = loss_fn(y_pred, y_batch)
-            optimizer.zero_grad(set_to_none=True)
+            optimizer.zero_grad(set_to_none=False)
             loss.backward()
             optimizer.step()
         str_msg = f"Finished epoch {epoch}, latest loss {loss:.6f}"
